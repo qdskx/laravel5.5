@@ -1,0 +1,35 @@
+[2020-05-13 02:57:53] production.INFO: test  
+[2020-05-13 02:58:12] production.INFO: test  
+[2020-05-13 07:26:46] production.INFO: test  
+[2020-05-13 07:27:30] production.INFO: test  
+[2020-05-13 08:19:08] production.ERROR: Command "test" is not defined.
+
+Did you mean this?
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"test\" is not defined.
+
+Did you mean this?
+    make:test at /home/wwwroot/task.skx.com/vendor/symfony/console/Application.php:646)
+[stacktrace]
+#0 /home/wwwroot/task.skx.com/vendor/symfony/console/Application.php(236): Symfony\\Component\\Console\\Application->find('test')
+#1 /home/wwwroot/task.skx.com/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/wwwroot/task.skx.com/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/wwwroot/task.skx.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/wwwroot/task.skx.com/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-05-13 08:22:14] production.ERROR: Command "test" is not defined.
+
+Did you mean this?
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"test\" is not defined.
+
+Did you mean this?
+    make:test at /home/wwwroot/task.skx.com/vendor/symfony/console/Application.php:646)
+[stacktrace]
+#0 /home/wwwroot/task.skx.com/vendor/symfony/console/Application.php(236): Symfony\\Component\\Console\\Application->find('test')
+#1 /home/wwwroot/task.skx.com/vendor/symfony/console/Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/wwwroot/task.skx.com/vendor/laravel/framework/src/Illuminate/Console/Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/wwwroot/task.skx.com/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 /home/wwwroot/task.skx.com/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2020-05-13 08:23:06] production.INFO: test  

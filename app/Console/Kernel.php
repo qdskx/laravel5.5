@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         \App\Console\Commands\Test::class,
         \App\Console\Commands\One::class,
+        \App\Console\Commands\Two::class,
     ];
 
     /**
@@ -25,8 +26,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('second')
-                  ->hourly();
+         $schedule->command('one')
+                  ->everyMinute();
+        $schedule->command('two')
+        ->everyMinute();
+        $schedule->command('test')
+            ->everyMinute();
     }
 
     /**
