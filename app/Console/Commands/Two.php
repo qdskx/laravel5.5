@@ -3,7 +3,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
-use Log;
+//use Log;
 
 class Two extends Command {
 
@@ -18,7 +18,7 @@ class Two extends Command {
      */
     public function handle()
     {
-//        log::info('test');
+        \Log::info('test');
         echo 'two';
         // 功能代码写到这里
     }

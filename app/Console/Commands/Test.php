@@ -19,7 +19,7 @@ class Test extends Command {
     public function handle()
     {
         log::info('test');
-        echo 'rtttt';
+        echo 'test';
             // 功能代码写到这里
     }
 
