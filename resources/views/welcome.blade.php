@@ -89,6 +89,7 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                     <a href="https://github.com/laravel/laravel">我添加的1</a>
+                    <a href="https://github.com/laravel/laravel">我添加的2</a>
                 </div>
             </div>
         </div>
