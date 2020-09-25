@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('xs' , 'XsController@index');
+Route::get('xs_add' , 'XsController@addDoc');
