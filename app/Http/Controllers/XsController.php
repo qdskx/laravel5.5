@@ -10,8 +10,13 @@ class XsController{
         $xs = new XS('liu');
 
         $search = $xs->search;
-        $doc = $search->setQuery('万得福')->search();
-        echo "<pre>";var_dump('doc' , $doc);echo "<pre>";
+        $docs = $search->setQuery('万得福')->search();
+        //每个元素对象的形式
+        echo "<pre>";var_dump('docs' , $docs);echo "<pre>";
+        foreach($docs as $doc){
+            var_dump($doc['goods_id']);
+            var_dump($doc['goods_name']);
+        }
         $count = $search->count('万得福');
         echo "<pre>";var_dump('count' , $count);echo "<pre>";
     }
@@ -20,7 +25,8 @@ class XsController{
      * 向xunsearch添加数据
      */
     public function addDoc(){
-//        $goods = DB::table('ecs_goods')->select('goods_id','goods_name')->limit(3)->get()->toArray();
+//        $goods = DB::table('goods')->select('goods_id','goods_name')->limit(3)->get();
+//        $goods = DB::table('goods')->select('goods_id','goods_name')->limit(3)->get()->toArray();
         $goods = Goods::select('goods_id','goods_name')->limit(3)->get()->toArray();
 //        var_dump($goods);
 //        die;
