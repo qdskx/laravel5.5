@@ -12,14 +12,14 @@ class XsController{
         $xs = new XS('fang');
 
         $search = $xs->search;
-        $docs = $search->setQuery('万得福')->search();
+        $docs = $search->setQuery('开发')->search();
         //每个元素对象的形式
         echo "<pre>";var_dump('docs' , $docs);echo "<pre>";
         foreach($docs as $doc){
-            var_dump($doc['goods_id']);
-            var_dump($doc['goods_name']);
+            var_dump($doc['cat_id']);
+            var_dump($doc['cat_name']);
         }
-        $count = $search->count('万得福');
+        $count = $search->count('开发');
         echo "<pre>";var_dump('count' , $count);echo "<pre>";
     }
 
