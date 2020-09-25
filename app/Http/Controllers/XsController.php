@@ -3,11 +3,13 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use XS;
 use App\Http\Model\Goods;
+use App\Http\Model\Category;
 
 class XsController{
     public function index(){
         var_dump(__METHOD__);
-        $xs = new XS('liu');
+//        $xs = new XS('liu');
+        $xs = new XS('fang');
 
         $search = $xs->search;
         $docs = $search->setQuery('万得福')->search();
@@ -27,10 +29,12 @@ class XsController{
     public function addDoc(){
 //        $goods = DB::table('goods')->select('goods_id','goods_name')->limit(3)->get();
 //        $goods = DB::table('goods')->select('goods_id','goods_name')->limit(3)->get()->toArray();
-        $goods = Goods::select('goods_id','goods_name')->limit(3)->get()->toArray();
+//        $goods = Goods::select('goods_id','goods_name')->limit(3)->get()->toArray();
+        $goods = Category::select('cat_id','cat_name')->limit(10)->get()->toArray();
 //        var_dump($goods);
 //        die;
-        $xs = new XS('liu');
+//        $xs = new XS('liu');
+        $xs = new XS('fang');
         $index = $xs->index;
 
         $index->clean();
