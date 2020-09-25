@@ -20,18 +20,17 @@ class XsController{
      * 向xunsearch添加数据
      */
     public function addDoc(){
-        $goods = DB::table('ecs_goods')->select('goods_id','goods_name')->limit(3)->get()->toArray();
+//        $goods = DB::table('ecs_goods')->select('goods_id','goods_name')->limit(3)->get()->toArray();
+        $goods = Goods::select('goods_id','goods_name')->limit(3)->get()->toArray();
+//        var_dump($goods);
+//        die;
         $xs = new XS('liu');
         $index = $xs->index;
 
         $index->clean();
 
         foreach($goods as $val){
-            $value = [
-                'goods_id' => $val->goods_id,
-                'goods_name' => $val->goods_name
-            ];
-            $add = new \XSDocument($value);
+            $add = new \XSDocument($val);
             $index->add($add);
         }
     }
