@@ -38,7 +38,9 @@ Route::get('detail' , 'GoodsController@detail');
 //Route::get('startMS' , 'MsController@startms');
 
 
-
+Route::namespace('common')->prefix('common')->group(function(){
+    Route::get('index' , 'Redis@redisConnect');
+});
 
 
 

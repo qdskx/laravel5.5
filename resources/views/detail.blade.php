@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>{{$title}}</title>
+    <title>秒杀倒计时</title>
     <meta charset="UTF-8">
     <style>
         div{
@@ -15,7 +15,6 @@
 <h2 id="showtime">倒计时</h2>
 <div>
     <h3>大白兔原味奶糖227g/包 原味奶糖奶香浓郁糖果休闲食品零食小吃</h3>
-    <h5>20￥</h5>
 </div>
 
 <form action="startms" method="post">
@@ -38,7 +37,6 @@
     }
 
     var div = document.getElementById("showtime");
-//    var div = document.getElementsByTagName('h2');
     setInterval (function () {
         div.innerHTML = showtime();
     }, 1000);  //反复执行函数本身

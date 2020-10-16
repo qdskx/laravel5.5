@@ -18,7 +18,7 @@ class UserLogin
         var_dump(session('uid'));
 
         if(!session('uid')){
-//            return redirect('login');
+            return redirect('login');
         }
         return $next($request);
     }

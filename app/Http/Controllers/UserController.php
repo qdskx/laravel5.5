@@ -11,7 +11,7 @@ class UserController{
 
     public function dologin(Request $request){
         $uid = intval(trim($request->input('uid')));
-        session('uid' , $uid);
+        session(['uid' => $uid]);
         return view('detail' , ['title' => '秒杀页面']);
     }
 
