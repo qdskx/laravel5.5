@@ -15,5 +15,10 @@ class UserController{
         return view('detail' , ['title' => '秒杀页面']);
     }
 
+    public function loginout(Request $request){
+        $request->session()->forget('uid');
+        return view('detail');
+    }
+
 
 }

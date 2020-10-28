@@ -1,0 +1,7 @@
+20201019 03:30:08==>0_不存在
+20201019 08:22:59==>SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'field list' (SQL: update `ms_goods` set `goods_number` = `goods_number` - 1, `updated_at` = 2020-10-19 08:22:59 where `goods_id` = 1)
+20201019 08:24:35==>SQLSTATE[22003]: Numeric value out of range: 1690 BIGINT UNSIGNED value is out of range in '(`ms`.`ms_goods`.`goods_number` - 1)' (SQL: update `ms_goods` set `goods_number` = `goods_number` - 1 where `goods_id` = 1)
+20201019 08:24:43==>SQLSTATE[22003]: Numeric value out of range: 1690 BIGINT UNSIGNED value is out of range in '(`ms`.`ms_goods`.`goods_number` - 1)' (SQL: update `ms_goods` set `goods_number` = `goods_number` - 1 where `goods_id` = 1)
+20201019 08:26:46==>SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ms.ms_orders' doesn't exist (SQL: insert into `ms_orders` (`order_sn`, `uid`, `goods_id`, `addtime`) values (2020101953101102, 1, 1, 1603096005))
+20201019 08:28:58==>View [pay] not found.
+20201019 08:32:04==>SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1-1' for key 'goods_id' (SQL: insert into `ms_order` (`order_sn`, `uid`, `goods_id`, `addtime`) values (2020101952575510, 1, 1, 1603096324))

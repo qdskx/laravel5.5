@@ -42,14 +42,15 @@ Route::namespace('common')->prefix('common')->group(function(){
     Route::get('index' , 'Redis@redisConnect');
 });
 
-
+Route::get('test' , 'TestController@index');
+Route::put('test' , 'TestController@index_put');
 
 
 /*
  * 秒杀
  */
 Route::group(['middleware' => ['login']] , function(){
-    Route::get('startms' , 'MsController@startms');
+    Route::post('startms' , 'MsController@startms');
 });
 
 

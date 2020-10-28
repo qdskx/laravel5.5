@@ -21,7 +21,8 @@ class MsController{
     public function startms(Request $request){
 
         //        记录页面访问量
-        Redis::incr($this->page_view);
+        $redis = Redis::redisConnect('');
+        $redis->incr($this->page_view);
         $uid = session('uid');
         $goods_id = intval(trim($request->input('goods_id')));
         if(!$this->checkGoodsId($goods_id)){
@@ -86,7 +87,8 @@ class MsController{
     public function payment($uid , $goods_id){
 
         //            防止重复抢购
-        $succ_user = Redis::lrange($this->succ_user , 0 , -1);
+        $redis = Redis::redisConnect('');
+        $redis->lrange($this->succ_user , 0 , -1);
         if(!empty($succ_user)){
             if(in_array($uid , $succ_user))return view('msed', ['title' => '消息提示']);
         }
@@ -94,11 +96,11 @@ class MsController{
         //        核验库存
         $this->checkStore($goods_id);
 
-        Redis::watch($this->goods_store);
+        $redis->watch($this->goods_store);
         DB::beginTransaction();
         try{
 
-            Goods::where('goods_id' , $goods_id)->update('goods_number = goods_number- 1');
+            Goods::where('goods_id' , $goods_id)->decrement('goods_number');
 
             $data['order_sn'] = $this->build_order_no();
             $data['uid']      = $uid;
@@ -108,7 +110,7 @@ class MsController{
             Order::insertGetId($data);
             DB::commit();
             //            redis减库存
-            Redis::decr($this->goods_store);
+            $redis->decr($this->goods_store);
             //            存储已抢购成功的用户
             Redis::pushAdd('' , $this->succ_user , $uid);
             return view('pay');
